@@ -45,6 +45,7 @@ export const signIn = async (username: string, password: string) => {
 };
 
 export const completeMfaChallenge = async (username: string, mfaCode: string, session: string) => {
+  const secretHash = calculateSecretHash(username, config.clientId, config.clientSecret);
   const params = {
     ClientId: config.clientId,
     ChallengeName: 'SOFTWARE_TOKEN_MFA' as const,
@@ -52,6 +53,7 @@ export const completeMfaChallenge = async (username: string, mfaCode: string, se
     ChallengeResponses: {
       USERNAME: username,
       SOFTWARE_TOKEN_MFA_CODE: mfaCode,
+      SECRET_HASH: secretHash,
     },
   };
 
