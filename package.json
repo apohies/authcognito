@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "@aws-sdk/client-cognito-identity-provider": "^3.533.0",
+    "@types/qrcode.react": "^1.0.5",
     "crypto": "^1.0.1",
     "crypto-js": "^4.2.0",
+    "qrcode.react": "^4.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-qr-code": "^2.0.15",
     "react-router-dom": "^6.22.3"
   },
   "devDependencies": {

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { signIn, completeMfaChallenge, associateSoftwareToken, verifySoftwareToken } from './authService';
+import QRCodeComponent from './QrCodeComponent';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -90,7 +91,9 @@ const LoginPage = () => {
         </>
       ) : (
         <>
-          <p>Scan this QR code with your authenticator app: {secretCode}</p>
+          <div>
+      <QRCodeComponent secretCode={secretCode} />
+    </div>
           <input
             type="text"
             value={mfaCode}
